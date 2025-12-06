@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from processing.pipeline import analyze_image
+from core.processing.pipeline import analyze_image
 
 app = FastAPI(title="AI Engine")
 

@@ -1,8 +1,13 @@
 import base64
-from detectors.fake_detector import detect_ai_image
-from metadata.exif_reader import extract_metadata
-from similarity.hashing import generate_hash
-from ocr.ocr_reader import extract_text
+# from detectors.fake_detector import detect_ai_image
+# from metadata.exif_reader import extract_metadata
+# from similarity.hashing import generate_hash
+# from ocr.ocr_reader import extract_text
+from core.detectors.fakedetection import detect_ai_image
+from core.metadata.exifreader import extract_metadata
+from core.similarity.hashing import generate_hash
+from core.ocr.ocrreader import extract_text
+
 
 def analyze_image(image_base64: str):
     try:
