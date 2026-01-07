@@ -2,22 +2,27 @@ import React, { useState } from "react";
 import UploadForm from "../components/UploadForm.jsx";
 import ResultCard from "../components/ResultCard.jsx";
 
-function DashboardPage() {
+function DashboardPage({ goLanding }) {
   const [analysisResult, setAnalysisResult] = useState(null);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10 space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-2xl font-bold">Image Fraud Detection Dashboard</h1>
-        <p className="text-sm text-slate-400">
-          Upload an image (damaged product, ID card, etc.) and get an AI-based
-          authenticity and fraud risk analysis.
-        </p>
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <header className="px-6 py-4 flex justify-between items-center border-b border-slate-800">
+        <h1 className="text-xl font-bold">Dashboard</h1>
+
+        <button
+          onClick={goLanding}
+          className="px-3 py-1 text-sm rounded-md bg-slate-800 hover:bg-slate-700"
+        >
+          ← Back
+        </button>
       </header>
 
-      <div className="grid md:grid-cols-2 gap-6 items-start">
-        <UploadForm onResult={setAnalysisResult} />
-        <ResultCard result={analysisResult} />
+      <div className="max-w-5xl mx-auto px-4 py-10">
+        <div className="grid md:grid-cols-2 gap-6 items-start">
+          <UploadForm onResult={setAnalysisResult} />
+          <ResultCard result={analysisResult} />
+        </div>
       </div>
     </div>
   );
